@@ -1,0 +1,15 @@
+<div class="container" data-controller="search">
+  <h1>Mercedes API challenge</h1>
+
+  <%= form_tag("/", method: "get", remote: true, data: { action: "submit->search#search" }) do %>
+    <%= label_tag(:lat, 'Latitude') %>
+    <%= text_field_tag(:lat, '', data: {search_target: "lat"}) %>
+    <%= label_tag(:lat, 'Longitude') %>
+    <%= text_field_tag(:lng, '', data: {search_target: "lng"}) %>
+    <%= submit_tag('Search') %>
+  <% end %>
+
+  <ul data-search-target="result">
+
+  </ul>
+</div>
